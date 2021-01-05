@@ -3,7 +3,7 @@
 import ProductService from './services/ProductService';
 const productService = new ProductService(); //Importa la clase con los metodos
 
-import { format } from 'timeago.js'; //Este metodo toma una fecha y la formatea correctamente
+import './styles/ui.css'
 
 class UI {
 
@@ -15,23 +15,21 @@ class UI {
             const div = document.createElement('div'); //Va a crear un nuevo contenedor
             div.className = '';
             div.innerHTML = `
-                <div class="card m-2">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="${product.imagePath}" class="img-fluid" alt="">
+                
+                    <div class="product">
+                        <div class="img">
+                            <img src="http://localhost:3000${product.imagePath}" alt="" class="img">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-block px-2">
-                                <h4 class="card-title">${product.title}</h4>
-                                <p class="card-text">${product.price}</p>
-                                <a href="#" class="btn btn-danger delete" _id="${product._id}">X</a>
-                            </div>
+                        <div class="productDescription">
+                            <div class="card-title">${product.title}</div>                            
+                            <div class="card-description">${product.description}</div>
+                            <div class="card-price">$${product.price}</div>
+                            <a href="#"><button class="delete" _id="${product._id}">Delete product</button></a>
+                          
                         </div>
                     </div>
-                    <div class="card-footer w-100 text-muted">
-                        ${format(product.created_at)}
-                    </div>
-                </div>
+
+                
             `;
             productsCardContainer.appendChild(div); //Este div creado pasa a formar parte del contenedor
         });
@@ -47,18 +45,36 @@ class UI {
         document.getElementById('product-form').reset(); //Borra los datos del formulario
     }
 
-    renderMessage(message, colorMessage, secondsToRemove) {
+    renderMessageAdd(message, secondsToRemove) {
         const div = document.createElement('div');
-        div.className = `alert alert-${colorMessage} message`;
+        div.className = 'messageAdd';
         div.appendChild(document.createTextNode(message));
 
-        const container = document.querySelector('.col-md-4'); //Selecciona el contenedor principal
+        const container = document.querySelector('.containerTwo'); //Selecciona el contenedor principal
         const productForm = document.querySelector('#product-form');
 
         container.insertBefore(div, productForm); //Va a insertar el nuevo elemento dentro de container, antes del formulario
+        
         setTimeout(() => { //Timer para que desaparezca el mensaje
-            document.querySelector('.message').remove(); //Va a remover todos los elementos con clase 'message'
+            document.querySelector('.messageAdd').remove(); //Va a remover todos los elementos con clase 'message'
         }, secondsToRemove);
+        
+    }
+
+    renderMessageRemove(message, secondsToRemove) {
+        const div = document.createElement('div');
+        div.className = 'messageRemove';
+        div.appendChild(document.createTextNode(message));
+
+        const container = document.querySelector('.containerTwo'); //Selecciona el contenedor principal
+        const productForm = document.querySelector('#product-form');
+
+        container.insertBefore(div, productForm); //Va a insertar el nuevo elemento dentro de container, antes del formulario
+        
+        setTimeout(() => { //Timer para que desaparezca el mensaje
+            document.querySelector('.messageRemove').remove(); //Va a remover todos los elementos con clase 'message'
+        }, secondsToRemove);
+        
     }
 
     async deleteProduct(productId) {

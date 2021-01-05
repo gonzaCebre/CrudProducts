@@ -22,7 +22,7 @@ document.getElementById('product-form') //Llama al formulario de nuevo producto
 
         const ui = new UI(); //Llama a la clase
         ui.addANewProduct(formData); //utiliza el metodo de la clase
-        ui.renderMessage('New Product Added', 'success', 3000);//Cuando se cree el nuevo producto va a parecer ese mensaje
+        ui.renderMessageAdd('New Product Added', 3000);//Cuando se cree el nuevo producto va a parecer ese mensaje
 
         e.preventDefault(); //Evita que se refresque la pagina cuando das submit
     });
@@ -32,7 +32,7 @@ document.getElementById('product-form') //Llama al formulario de nuevo producto
             if (e.target.classList.contains('delete')) { //Si el click es sobre un elemento con clase 'delete'
                 const ui = new UI();
                 ui.deleteProduct(e.target.getAttribute('_id'))
-                ui.renderMessage('Product removed', 'danger', 2000);
+                ui.renderMessageRemove('Product removed', 3000);
             }
             e.preventDefault();
         });

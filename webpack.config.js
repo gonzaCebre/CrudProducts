@@ -10,7 +10,7 @@ module.exports = {
         path: path.join(__dirname, 'backend/public'), //Lo va a enviar a la carpeta public del backend
         filename: 'js/bundle.js'
     },
-    mode: 'production',
+    mode: 'development',
 
     module: {
         rules: [

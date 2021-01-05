@@ -4,49 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products App</title>
+    <!--
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/app.css">
 
 </head>
 <body>
     
     <!-- NAVIGATION -->
-  <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar">
     <div class="container">
-      <a class="navbar-brand" href="/">Products App - Stay Chill</a>
+      <a class="title" href="/">Products App</a>
     </div>
   </nav>
 
-  <div class="container p-4" id="app">
-    <div class="row">
-      <div class="col-md-4">
-
-        <form id="product-form" class="card card-body">
-          <div class="form-group">
-            <input type="text" id="title" class="form-control" placeholder="Product Title" autofocus>
-          </div>
-          <div class="form-group">
-            <input type="text" id="price" class="form-control" placeholder="Price">
-          </div>
-          <div class="form-group">
-            <input type="text" id="description" class="form-control" placeholder="Description">
-          </div>
-          <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="image" required>
-                <label class="custom-file-label" for="image" aria-describedby="inputGroupFileAddon02">Choose Image</label>
-              </div>
-            </div>
-          <button type="Submit" class="btn btn-primary">
+  <div class="containerBody" id="app">
+      <div class="containerTwo">
+        <form id="product-form" class="form">
+          <div class="add">Add a new product</div>
+          <input type="text" id="title" class="input" placeholder="Product Title" autofocus>
+          <input type="text" id="price" class="input" placeholder="Price">
+          <textarea type="text" id="description" class="inputDescription" placeholder="Description"></textarea>
+          <input type="file"  id="image" required class="inputFile">
+          
+          <button type="Submit" class="button">
             Save Product
           </button>
         </form>
       </div>
 
-      <div class="col-md-8" id="products-cards">
-      </div>
+    <div class="productsList" id="products-cards"></div>
+      
 
-    </div>
+    
 
   </div>
 

@@ -1,0 +1,92 @@
+.product {
+    height: 400px;
+    width: 500px;
+    border: 2px solid  #E6E6E6;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.img {
+    height: 300px;
+    padding-left: 10px;
+    border-radius: 20px;
+}
+
+.productDescription {
+    width: 200px;
+    height: 350px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+       
+}
+
+.card-title {
+    font-size: 25px;
+    color: #01DF01;
+    text-align: center;
+    text-transform: uppercase;
+        
+}
+
+.card-description {
+    background-color: #E6E6E6;
+    border-radius: 20px;
+    height: 250px;
+    margin-top: 10px;
+    padding: 10px;
+    color: rgb(73, 73, 73);
+    text-transform: capitalize;
+}
+
+
+.card-price {
+    text-align: right;
+    font-size: 25px;
+    color:black;
+    margin-top: 10px;
+}
+
+.delete {
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+
+}
+
+.messageAdd {
+    background:#01DF01;
+    width: 250px;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    
+}
+
+.messageRemove {
+    background:#cf4036;
+    width: 250px;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
